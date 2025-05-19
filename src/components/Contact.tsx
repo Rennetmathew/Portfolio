@@ -11,34 +11,42 @@ const Contact: React.FC = () => {
   const [responseMessage, setResponseMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    setResponseMessage('');
+  e.preventDefault();
+  setLoading(true);
+  setResponseMessage('');
 
+  try {
+    const res = await fetch('https://portfolio-backend-vuhu.onrender.com/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, message }),
+    });
+
+    let data;
     try {
-      const res = await fetch('http://localhost:5000/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, message }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setResponseMessage('Message sent successfully!');
-        setEmail('');
-        setMessage('');
-      } else {
-        setResponseMessage(data.message || 'Something went wrong.');
-      }
-    } catch (error) {
-      setResponseMessage('Failed to send message. Please try again later.');
+      data = await res.json();
+    } catch {
+      data = { message: 'Unexpected response format.' };
     }
 
-    setLoading(false);
-  };
+    if (res.ok) {
+      setResponseMessage('Message sent successfully!');
+      setEmail('');
+      setMessage('');
+    } else {
+      setResponseMessage(data.message || 'Something went wrong.');
+    }
+  } catch (error) {
+    console.error('Submission error:', error);
+    setResponseMessage('Failed to send message. Please try again later.');
+  }
+
+  setLoading(false);
+};
+
+
 
   return (
     <section id="contact" className="min-h-screen bg-gradient-to-br from-gray-900 to-black relative overflow-hidden py-20">
