@@ -85,7 +85,7 @@ const Resume: React.FC = () => {
           </p>
           
           <a 
-            href="/resume.pdf" 
+            href="src/hooks/resume.pdf" 
             download
             className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
           >
