@@ -89,8 +89,8 @@ const Contact: React.FC = () => {
                   <div className="p-3 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-300">
                     <Globe className="w-6 h-6 text-blue-400" />
                   </div>
-                  <a href="https://rennetportfolio.com" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-blue-400 transition-colors duration-300">
-                    rennetportfolio.com
+                  <a href="https://http://portfolio-rennet-matherws-projects.vercel.app" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-blue-400 transition-colors duration-300">
+                    Rennet's-Portfolio
                   </a>
                 </div>
               </div>
