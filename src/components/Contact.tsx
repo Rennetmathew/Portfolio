@@ -1,9 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, Globe, Github, Linkedin, Instagram, Code2 } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Contact: React.FC = () => {
   useScrollAnimation();
+
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [responseMessage, setResponseMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setResponseMessage('');
+
+    try {
+      const res = await fetch('http://localhost:5000/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, message }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setResponseMessage('Message sent successfully!');
+        setEmail('');
+        setMessage('');
+      } else {
+        setResponseMessage(data.message || 'Something went wrong.');
+      }
+    } catch (error) {
+      setResponseMessage('Failed to send message. Please try again later.');
+    }
+
+    setLoading(false);
+  };
 
   return (
     <section id="contact" className="min-h-screen bg-gradient-to-br from-gray-900 to-black relative overflow-hidden py-20">
@@ -23,7 +58,7 @@ const Contact: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Contact Information */}
+            {/* Contact Info */}
             <div className="animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
               <div className="space-y-8">
                 <div className="flex items-center space-x-4 text-white/90 group">
@@ -34,7 +69,6 @@ const Contact: React.FC = () => {
                     rennetmathew29@gmail.com
                   </a>
                 </div>
-
                 <div className="flex items-center space-x-4 text-white/90 group">
                   <div className="p-3 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-300">
                     <Phone className="w-6 h-6 text-blue-400" />
@@ -43,7 +77,6 @@ const Contact: React.FC = () => {
                     +91 979 046 5247
                   </a>
                 </div>
-
                 <div className="flex items-center space-x-4 text-white/90 group">
                   <div className="p-3 rounded-full bg-blue-500/20 group-hover:bg-blue-500/30 transition-colors duration-300">
                     <Globe className="w-6 h-6 text-blue-400" />
@@ -57,27 +90,39 @@ const Contact: React.FC = () => {
 
             {/* Contact Form */}
             <div className="animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8 delay-200">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
                   <input
                     type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="name@email.com"
+                    required
                     className="w-full px-6 py-4 bg-black/30 border border-gray-500/30 rounded-lg focus:outline-none focus:border-blue-500/50 text-white placeholder-gray-400 transition-colors duration-300"
                   />
                 </div>
                 <div>
                   <textarea
                     rows={4}
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     placeholder="Your message"
+                    required
                     className="w-full px-6 py-4 bg-black/30 border border-gray-500/30 rounded-lg focus:outline-none focus:border-blue-500/50 text-white placeholder-gray-400 transition-colors duration-300"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
+                  disabled={loading}
+                  className="w-full px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50"
                 >
-                  Send Message
+                  {loading ? 'Sending...' : 'Send Message'}
                 </button>
+                {responseMessage && (
+                  <p className={`text-center mt-4 ${responseMessage.includes('success') ? 'text-green-400' : 'text-red-400'}`}>
+                    {responseMessage}
+                  </p>
+                )}
               </form>
             </div>
           </div>
@@ -88,36 +133,16 @@ const Contact: React.FC = () => {
       <footer className="mt-20 border-t border-gray-800">
         <div className="container mx-auto px-4 py-8">
           <div className="flex justify-center space-x-6">
-            <a
-              href="https://github.com/Rennetmathew"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1"
-            >
+            <a href="https://github.com/Rennetmathew" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1">
               <Github className="w-6 h-6" />
             </a>
-            <a
-              href="https://linkedin.com/in/rennet-mathew-468513258"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1"
-            >
+            <a href="https://linkedin.com/in/rennet-mathew-468513258" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1">
               <Linkedin className="w-6 h-6" />
             </a>
-            <a
-              href="https://instagram.com/rennet.m"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1"
-            >
+            <a href="https://instagram.com/rennet.m" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1">
               <Instagram className="w-6 h-6" />
             </a>
-            <a
-              href="https://leetcode.com/u/rennet_m"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1"
-            >
+            <a href="https://leetcode.com/u/rennet_m" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all duration-300 transform hover:-translate-y-1">
               <Code2 className="w-6 h-6" />
             </a>
           </div>
