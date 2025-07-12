@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code2, ShoppingCart, Brain, Github, ExternalLink } from 'lucide-react';
+import { Sprout, User, PieChart, TrendingUp, Github, ExternalLink } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Projects: React.FC = () => {
@@ -7,46 +7,64 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
-      icon: <Code2 className="w-8 h-8" />,
-      title: "1% Funding Platform",
-      description: "A stock market simulation platform for Indian options traders with funding features.",
+      icon: <Sprout className="w-8 h-8" />,
+      title: "AgriCopilot — Smart Crop Planning Assistant",
+      description: "Intelligent assistant for farmers that recommends optimal crops using real-time soil and market data. Supports multilingual interactions.",
       highlights: [
-        "Integrated authentication and challenge flow with 100+ successful completions",
-        "Enhanced UI/UX, reducing user support requests by 20%"
+        "Real-time data integration (soil/weather)",
+        "WhatsApp bot with local language NLP",
+        "ML classification models for crop recommendation"
       ],
-      tech: ["Java", "Spring Boot", "React.js", "MongoDB", "Firebase", "Tailwind CSS"],
-      gradient: "from-blue-500/20 to-cyan-500/20",
-      borderGradient: "from-blue-500/30 to-cyan-500/30",
-      github: "https://github.com/yourusername/funding-platform",
-      live: "https://funding-platform.demo.com"
-    },
-    {
-      icon: <ShoppingCart className="w-8 h-8" />,
-      title: "Ecommerce Application",
-      description: "Built a scalable ecommerce platform supporting 200+ users and secure transactions.",
-      highlights: [
-        "Improved mobile responsiveness, boosting user satisfaction by 25%",
-        "Implemented secure JWT-based login and role-based access control"
-      ],
-      tech: ["Java", "Spring Boot", "React.js", "MongoDB", "JWT", "REST APIs"],
-      gradient: "from-purple-500/20 to-pink-500/20",
-      borderGradient: "from-purple-500/30 to-pink-500/30",
-      github: "https://github.com/yourusername/ecommerce-app",
-      live: "https://ecommerce.demo.com"
-    },
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "AI-Powered Career Navigator",
-      description: "Designed a platform to suggest personalized career paths using ML and job data.",
-      highlights: [
-        "Used OpenAI API to deliver dynamic career guidance; adopted by 50+ users",
-        "Built responsive UI for better accessibility across devices"
-      ],
-      tech: ["React.js", "Node.js", "Python", "Express.js", "MongoDB", "ML", "OpenAI API"],
+      tech: ["Python", "Machine Learning", "WhatsApp API", "NLP", "Scikit-learn", "Pandas"],
       gradient: "from-green-500/20 to-emerald-500/20",
       borderGradient: "from-green-500/30 to-emerald-500/30",
-      github: "https://github.com/yourusername/career-navigator",
-      live: "https://career-navigator.demo.com"
+      github: "https://github.com/rennet-matherw/agricopilot",
+      live: "https://agricopilot.demo.com"
+    },
+    {
+      icon: <User className="w-8 h-8" />,
+      title: "Football Player Recommendation System",
+      description: "Analyzes gameplay footage to rate football players and recommend personalized improvement strategies based on position-specific skill evaluation.",
+      highlights: [
+        "Frame-based skill extraction",
+        "Player ranking & suggestions using ML",
+        "Role-aware performance insights"
+      ],
+      tech: ["Python", "OpenCV", "Scikit-learn", "Machine Learning", "Computer Vision"],
+      gradient: "from-blue-500/20 to-indigo-500/20",
+      borderGradient: "from-blue-500/30 to-indigo-500/30",
+      github: "https://github.com/rennet-matherw/football-player-recommendation",
+      live: "https://football-recommendation.demo.com"
+    },
+    {
+      icon: <PieChart className="w-8 h-8" />,
+      title: "Expense Sharing App (GUVI AI/ML Project)",
+      description: "Tool to split group expenses fairly using cost analysis and visualization. Built as part of GUVI's AI/ML program.",
+      highlights: [
+        "Expense processing with Pandas",
+        "Graphs with Matplotlib",
+        "Cost balance algorithm for fairness"
+      ],
+      tech: ["Python", "Pandas", "Matplotlib", "Data Analysis", "Algorithms"],
+      gradient: "from-purple-500/20 to-pink-500/20",
+      borderGradient: "from-purple-500/30 to-pink-500/30",
+      github: "https://github.com/rennet-matherw/expense-sharing-app",
+      live: "https://expense-sharing.demo.com"
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "Gaussian Mixture Clustering Demo",
+      description: "Demonstrates clustering using Gaussian Mixture Models on synthetic data with visual comparison to traditional clustering methods.",
+      highlights: [
+        "GMM vs K-Means comparison",
+        "Probabilistic cluster boundaries",
+        "Visual explanation of results"
+      ],
+      tech: ["Python", "Scikit-learn", "Matplotlib", "Machine Learning", "Clustering"],
+      gradient: "from-orange-500/20 to-red-500/20",
+      borderGradient: "from-orange-500/30 to-red-500/30",
+      github: "https://github.com/rennet-matherw/gaussian-mixture-clustering",
+      live: "https://gmm-clustering.demo.com"
     }
   ];
 
@@ -60,11 +78,11 @@ const Projects: React.FC = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
             <h2 className="text-5xl font-bold text-white mb-6 font-serif tracking-tight">
-              Featured Projects
+              AI/ML Projects
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12"></div>
             <p className="text-xl text-white/80 mb-16 font-serif">
-              A showcase of my technical projects and achievements
+              A showcase of my machine learning and AI projects demonstrating real-world applications
             </p>
           </div>
 

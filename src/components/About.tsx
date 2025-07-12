@@ -7,24 +7,24 @@ const About: React.FC = () => {
 
   const passions = [
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "Full-Stack Development",
-      description: "Finding creative solutions to complex challenges"
+      icon: <Brain className="w-8 h-8" />,
+      title: "Machine Learning",
+      description: "Building intelligent systems that learn from data to solve real-world problems"
     },
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Artificial Intelligence",
-      description: "Exploring the frontiers of machine learning and AI"
+      icon: <Code className="w-8 h-8" />,
+      title: "Python Development",
+      description: "Creating robust data science and ML solutions with Python"
     },
     {
       icon: <Rocket className="w-8 h-8" />,
-      title: "Innovation",
-      description: "Always exploring new technologies and skills"
+      title: "AI Innovation",
+      description: "Exploring cutting-edge AI technologies and applications"
     },
     {
       icon: <Coffee className="w-8 h-8" />,
       title: "Continuous Learning",
-      description: "Committed to growth and improvement"
+      description: "Committed to mastering new AI/ML techniques and technologies"
     }
   ];
 
@@ -46,26 +46,26 @@ const About: React.FC = () => {
           <div className="prose prose-lg prose-invert mx-auto mb-16 animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8 delay-200">
             <div className="bg-gradient-to-br from-black/60 to-gray-900/30 backdrop-blur-sm border border-gray-500/20 rounded-xl p-8 shadow-xl">
               <p className="text-xl text-white/90 leading-relaxed mb-6 font-serif">
-                Meet Rennet T Mathew, a tech wizard with a knack for full-stack development and a burning passion for artificial intelligence. He effortlessly navigates the world of codes, crafting seamless web applications and delving into the unfathomable depths of AI.
+                Meet Rennet T Mathew, an AI/ML enthusiast with a passion for applying machine learning to solve real-world problems. Currently upskilling through GUVI's comprehensive AI/ML program, he combines academic knowledge with practical project experience.
               </p>
               <p className="text-lg text-white/80 leading-relaxed font-serif mb-8">
-                Currently pursuing B.Tech in AI & Data Science, Rennet combines theoretical knowledge with practical expertise, creating innovative solutions that bridge the gap between traditional development and cutting-edge AI technologies.
+                Pursuing B.Tech in AI & Data Science while actively developing AI projects like AgriCopilot (Smart Crop Planning Assistant) and Football Player Recommendation System. Expertise in Python, scikit-learn, and data science tools with a focus on creating intelligent, data-driven solutions.
               </p>
               <div className="flex justify-center gap-4">
                 <a 
                   href="/resume.pdf" 
-                  download
+                  download="Rennet_Matherw_AI_ML_Resume.pdf"
                   className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Download className="w-5 h-5 mr-2" />
-                  Download CV
+                  Download AI/ML Resume
                 </a>
                 <a 
                   href="#projects"
                   className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <ExternalLink className="w-5 h-5 mr-2" />
-                  View Projects
+                  View AI/ML Projects
                 </a>
               </div>
             </div>

@@ -28,7 +28,13 @@ const Resume: React.FC = () => {
       degree: 'B.Tech in Artificial Intelligence and Data Science',
       institution: "St. Joseph's Institute of Technology, Chennai, India",
       period: 'Nov 2022 - Jun 2026',
-      description: 'Currently pursuing B.Tech with a CGPA of 7.6/10. Focusing on machine learning, data analysis, and full-stack development.',
+      description: 'Currently pursuing B.Tech with a CGPA of 7.6/10. Focusing on machine learning, data analysis, and AI development.',
+    },
+    {
+      degree: 'GUVI AI/ML Program',
+      institution: 'GUVI (Google for Education Partner)',
+      period: '2024 - Present',
+      description: 'Comprehensive AI/ML program covering Python, machine learning algorithms, data science, and real-world project development.',
     },
     {
       degree: 'Higher Secondary Certificate (Computer Science)',
@@ -40,6 +46,12 @@ const Resume: React.FC = () => {
 
   const experience = [
     {
+      position: 'AI/ML Student Developer',
+      company: 'GUVI Program',
+      period: '2024 - Present',
+      description: 'Developing AI/ML projects including AgriCopilot (Smart Crop Planning Assistant) and Football Player Recommendation System. Building expertise in Python, scikit-learn, and machine learning model development.',
+    },
+    {
       position: 'Data Science Intern',
       company: 'Shrishti Innovative, Trivandrum, Kerala',
       period: 'Jun 2024',
@@ -49,11 +61,17 @@ const Resume: React.FC = () => {
       position: 'Member, College Coding Club',
       company: 'St. Joseph\'s Institute of Technology',
       period: '2023 - Present',
-      description: 'Engaged in hackathons and collaborative coding projects. Actively exploring open-source contributions and participating in coding competitions.',
+      description: 'Engaged in hackathons and collaborative coding projects. Actively exploring AI/ML applications and participating in data science competitions.',
     },
   ];
 
   const certifications = [
+    {
+      name: 'GUVI AI/ML Program (In Progress)',
+      issuer: 'GUVI (Google for Education Partner)',
+      date: '2024 - Present',
+      link: '#',
+    },
     {
       name: 'Data Mining (NPTEL)',
       issuer: 'IIT Kharagpur',
@@ -69,7 +87,7 @@ const Resume: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section id="resume" className="py-16 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-indigo-500/10 to-pink-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
@@ -81,16 +99,16 @@ const Resume: React.FC = () => {
           </h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
           <p className="text-xl text-white/80 mb-10 font-serif">
-            B.Tech student in AI & Data Science with expertise in full-stack development and machine learning
+            AI/ML Enthusiast | Python Developer | Data-Driven Problem Solver
           </p>
           
           <a 
             href="/resume.pdf" 
-            download
+            download="Rennet_Matherw_AI_ML_Resume.pdf"
             className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
           >
             <Download className="w-5 h-5 mr-3 group-hover:animate-bounce" />
-            Download Resume
+            Download AI/ML Resume
           </a>
         </div>
         
