@@ -19,17 +19,17 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold text-white font-serif">Rennet Mathew</span>
+            <span className="text-xl font-bold text-white font-inter">Rennet Mathew</span>
           </div>
           
           <div className="hidden md:block">
-            <div className="ml-10 flex items-center space-x-8">
-              {['Home', 'About', 'Skills', 'Projects', 'Contact'].map((item) => (
+            <div className="ml-10 flex items-center space-x-6">
+              {['Home', 'About', 'Skills', 'Projects', 'Resume', 'Certifications', 'Contact'].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase()}`}
-                  className={`text-white/80 hover:text-white transition-colors duration-300 font-serif ${
-                    item === 'Home' ? 'bg-blue-500/20 px-4 py-1 rounded-full' : ''
+                  className={`text-white/80 hover:text-white transition-colors duration-300 font-inter text-sm ${
+                    item === 'Home' ? 'bg-blue-500/20 px-3 py-1 rounded-full' : ''
                   }`}
                 >
                   {item}

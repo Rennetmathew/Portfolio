@@ -1,4 +1,5 @@
 import React from 'react';
+import { Code, Database, Tool, Brain, Server, GitBranch } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Skills: React.FC = () => {
@@ -6,44 +7,46 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: 'Programming Languages',
-      gradient: 'from-blue-500 to-cyan-500',
-      description: 'Core programming languages I specialize in',
-      skills: [
-        { name: 'Java', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'Python', level: 75 }
-      ]
+      icon: <Code className="w-8 h-8" />,
+      title: "Languages",
+      skills: ["Python", "SQL", "JavaScript", "TypeScript"],
+      gradient: "from-blue-500/20 to-cyan-500/20",
+      borderGradient: "from-blue-500/30 to-cyan-500/30"
     },
     {
-      title: 'Frontend Development',
-      gradient: 'from-purple-500 to-pink-500',
-      description: 'Technologies I use to create responsive and interactive user interfaces',
-      skills: [
-        { name: 'HTML', level: 90 },
-        { name: 'CSS', level: 85 },
-        { name: 'React.js', level: 85 }
-      ]
+      icon: <Brain className="w-8 h-8" />,
+      title: "ML Libraries",
+      skills: ["Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "TensorFlow", "PyTorch"],
+      gradient: "from-purple-500/20 to-pink-500/20",
+      borderGradient: "from-purple-500/30 to-pink-500/30"
     },
     {
-      title: 'Backend Development',
-      gradient: 'from-green-500 to-teal-500',
-      description: 'Tools and technologies I use for server-side development',
-      skills: [
-        { name: 'Node.js', level: 80 },
-        { name: 'Express.js', level: 75 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'REST APIs', level: 85 }
-      ]
+      icon: <Tool className="w-8 h-8" />,
+      title: "Tools & Platforms",
+      skills: ["Git", "Jupyter", "VSCode", "Docker", "AWS", "Google Colab"],
+      gradient: "from-green-500/20 to-emerald-500/20",
+      borderGradient: "from-green-500/30 to-emerald-500/30"
     },
     {
-      title: 'Development Tools',
-      gradient: 'from-orange-500 to-red-500',
-      description: 'Essential tools I use in my development workflow',
-      skills: [
-        { name: 'Git/GitHub', level: 90 },
-        { name: 'VS Code', level: 95 }
-      ]
+      icon: <Database className="w-8 h-8" />,
+      title: "ML Concepts",
+      skills: ["Regression", "Classification", "Clustering", "Neural Networks", "Deep Learning", "Feature Engineering"],
+      gradient: "from-orange-500/20 to-red-500/20",
+      borderGradient: "from-orange-500/30 to-red-500/30"
+    },
+    {
+      icon: <Server className="w-8 h-8" />,
+      title: "Deployment & MLOps",
+      skills: ["FastAPI", "Streamlit", "Flask", "Docker", "Model Deployment", "CI/CD"],
+      gradient: "from-indigo-500/20 to-blue-500/20",
+      borderGradient: "from-indigo-500/30 to-blue-500/30"
+    },
+    {
+      icon: <GitBranch className="w-8 h-8" />,
+      title: "Specializations",
+      skills: ["NLP", "Computer Vision", "Time Series", "Recommender Systems", "EDA", "Data Visualization"],
+      gradient: "from-teal-500/20 to-cyan-500/20",
+      borderGradient: "from-teal-500/30 to-cyan-500/30"
     }
   ];
 
@@ -54,51 +57,71 @@ const Skills: React.FC = () => {
       <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-gradient-to-tl from-indigo-500/10 to-pink-500/10 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
             <h2 className="text-5xl font-bold text-white mb-6 font-serif tracking-tight">
-              Technical Skills
+              Skills & Technologies
             </h2>
-            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
-            <p className="text-xl text-white/80 mb-12 font-serif max-w-2xl mx-auto">
-              A comprehensive overview of my technical expertise across different domains of software development,
-              with a focus on full-stack development using modern technologies and tools.
+            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12"></div>
+            <p className="text-xl text-white/80 mb-16 font-serif">
+              My toolkit for building intelligent AI/ML solutions
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8">
-            {skillCategories.map((category, categoryIndex) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skillCategories.map((category, index) => (
               <div
-                key={categoryIndex}
+                key={index}
                 className="animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8"
-                style={{ animationDelay: `${categoryIndex * 200}ms` }}
+                style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="bg-gradient-to-br from-black/60 to-gray-900/30 backdrop-blur-sm border border-gray-500/20 rounded-xl p-8 hover:border-blue-500/30 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/10">
-                  <h3 className="text-2xl font-bold text-white mb-3 font-serif">
+                <div className={`bg-gradient-to-br backdrop-blur-sm border rounded-xl p-6 h-full group hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 ${category.gradient} border-gradient-to-r ${category.borderGradient}`}>
+                  <div className="text-white/90 mb-4 group-hover:text-white transition-colors duration-300">
+                    {category.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4 font-serif">
                     {category.title}
                   </h3>
-                  <p className="text-white/70 mb-6 font-serif">
-                    {category.description}
-                  </p>
-                  <div className="space-y-6">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={`${categoryIndex}-${skillIndex}`} className="space-y-2">
-                        <div className="flex justify-between text-sm font-medium">
-                          <span className="text-lg text-white/90 font-serif">{skill.name}</span>
-                          <span className="text-white/60 font-mono">{skill.level}%</span>
-                        </div>
-                        <div className="h-3 bg-gray-700/30 rounded-full overflow-hidden">
-                          <div
-                            className={`h-full bg-gradient-to-r ${category.gradient} transition-all duration-1000 ease-out transform origin-left`}
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
-                      </div>
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 bg-white/10 rounded-full text-white/90 text-sm font-medium hover:bg-white/20 transition-colors duration-300"
+                      >
+                        {skill}
+                      </span>
                     ))}
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Learning Progress Section */}
+          <div className="mt-20 animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
+            <div className="bg-gradient-to-br from-black/60 to-gray-900/30 backdrop-blur-sm border border-gray-500/20 rounded-xl p-8">
+              <h3 className="text-2xl font-bold text-white mb-6 text-center font-serif">
+                Currently Learning
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+                  <span className="text-white/80">Advanced Deep Learning with PyTorch</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></div>
+                  <span className="text-white/80">MLOps and Model Deployment</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-white/80">Large Language Models (LLMs)</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                  <span className="text-white/80">Computer Vision Applications</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

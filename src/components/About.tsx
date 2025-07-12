@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Brain, Rocket, Coffee, Download, ExternalLink } from 'lucide-react';
+import { Brain, Database, Code, TrendingUp, Download, ExternalLink, Github, Linkedin } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const About: React.FC = () => {
@@ -7,24 +7,24 @@ const About: React.FC = () => {
 
   const passions = [
     {
-      icon: <Code className="w-8 h-8" />,
-      title: "Full-Stack Development",
-      description: "Finding creative solutions to complex challenges"
-    },
-    {
       icon: <Brain className="w-8 h-8" />,
-      title: "Artificial Intelligence",
-      description: "Exploring the frontiers of machine learning and AI"
+      title: "Machine Learning",
+      description: "Building intelligent systems that learn from data and make predictions"
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: "Innovation",
-      description: "Always exploring new technologies and skills"
+      icon: <Database className="w-8 h-8" />,
+      title: "Data Science",
+      description: "Extracting actionable insights from complex datasets"
     },
     {
-      icon: <Coffee className="w-8 h-8" />,
-      title: "Continuous Learning",
-      description: "Committed to growth and improvement"
+      icon: <Code className="w-8 h-8" />,
+      title: "MLOps & Deployment",
+      description: "Deploying ML models to production with scalable infrastructure"
+    },
+    {
+      icon: <TrendingUp className="w-8 h-8" />,
+      title: "AI Research",
+      description: "Staying updated with latest AI breakthroughs and research"
     }
   ];
 
@@ -38,27 +38,31 @@ const About: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
             <h2 className="text-5xl font-bold text-white mb-6 font-serif tracking-tight">
-              About Rennet
+              About Me
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-12"></div>
           </div>
 
           <div className="prose prose-lg prose-invert mx-auto mb-16 animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8 delay-200">
             <div className="bg-gradient-to-br from-black/60 to-gray-900/30 backdrop-blur-sm border border-gray-500/20 rounded-xl p-8 shadow-xl">
-              <p className="text-xl text-white/90 leading-relaxed mb-6 font-serif">
-                Meet Rennet T Mathew, a tech wizard with a knack for full-stack development and a burning passion for artificial intelligence. He effortlessly navigates the world of codes, crafting seamless web applications and delving into the unfathomable depths of AI.
+              <p className="text-xl text-white/90 leading-relaxed mb-6">
+                I'm Rennet Mathew, an AI/ML enthusiast passionate about transforming complex problems into elegant solutions through machine learning. Currently pursuing B.Tech in AI & Data Science, I'm on a mission to bridge the gap between theoretical AI concepts and practical, real-world applications.
               </p>
-              <p className="text-lg text-white/80 leading-relaxed font-serif mb-8">
-                Currently pursuing B.Tech in AI & Data Science, Rennet combines theoretical knowledge with practical expertise, creating innovative solutions that bridge the gap between traditional development and cutting-edge AI technologies.
+              <p className="text-lg text-white/80 leading-relaxed mb-6">
+                My journey into AI began during my first year when I witnessed how a simple recommendation algorithm could predict user behavior with remarkable accuracy. That moment sparked my curiosity about the power of data and algorithms, leading me to dive deep into machine learning, data science, and AI research.
               </p>
-              <div className="flex justify-center gap-4">
+              <p className="text-lg text-white/80 leading-relaxed mb-8">
+                Through GUVI's comprehensive AI/ML program, I'm gaining hands-on experience with cutting-edge technologies like TensorFlow, PyTorch, and MLOps practices. My focus areas include Natural Language Processing, Computer Vision, and deploying ML models at scale.
+              </p>
+              
+              <div className="flex flex-wrap justify-center gap-4 mb-6">
                 <a 
                   href="/resume.pdf" 
                   download
                   className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:-translate-y-1"
                 >
                   <Download className="w-5 h-5 mr-2" />
-                  Download CV
+                  Download Resume
                 </a>
                 <a 
                   href="#projects"
@@ -66,6 +70,28 @@ const About: React.FC = () => {
                 >
                   <ExternalLink className="w-5 h-5 mr-2" />
                   View Projects
+                </a>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex justify-center gap-6 pt-6 border-t border-white/20">
+                <a
+                  href="https://github.com/rennetmathew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-blue-400 transition-colors duration-300"
+                >
+                  <Github className="w-5 h-5" />
+                  <span>GitHub</span>
+                </a>
+                <a
+                  href="https://linkedin.com/in/rennetmathew"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/70 hover:text-blue-400 transition-colors duration-300"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span>LinkedIn</span>
                 </a>
               </div>
             </div>
