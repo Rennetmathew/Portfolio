@@ -1,5 +1,5 @@
 import React from 'react';
-import { Code, Database, Tool, Brain, Server, GitBranch } from 'lucide-react';
+import { Code, Database, Wrench, Brain, Server, GitBranch } from 'lucide-react';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 
 const Skills: React.FC = () => {
@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
       borderGradient: "from-purple-500/30 to-pink-500/30"
     },
     {
-      icon: <Tool className="w-8 h-8" />,
+      icon: <Wrench className="w-8 h-8" />,
       title: "Tools & Platforms",
       skills: ["Git", "Jupyter", "VSCode", "Docker", "AWS", "Google Colab"],
       gradient: "from-green-500/20 to-emerald-500/20",
