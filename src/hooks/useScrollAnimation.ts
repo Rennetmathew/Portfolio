@@ -13,14 +13,16 @@ const useScrollAnimation = () => {
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+    // Store elements in a variable to avoid re-querying DOM during cleanup
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    
+    elements.forEach((element) => {
       observer.observe(element);
     });
 
     return () => {
-      document.querySelectorAll('.animate-on-scroll').forEach((element) => {
-        observer.unobserve(element);
-      });
+      // Properly disconnect the observer to prevent memory leaks
+      observer.disconnect();
     };
   }, []);
 };

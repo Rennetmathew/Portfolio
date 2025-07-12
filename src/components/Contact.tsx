@@ -5,6 +5,7 @@ import useScrollAnimation from '../hooks/useScrollAnimation';
 const Contact: React.FC = () => {
   useScrollAnimation();
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,7 @@ const Contact: React.FC = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email, message }),
+      body: JSON.stringify({ name, email, message }),
     });
 
     let data;
@@ -33,6 +34,7 @@ const Contact: React.FC = () => {
 
     if (res.ok) {
       setResponseMessage('Message sent successfully!');
+      setName('');
       setEmail('');
       setMessage('');
     } else {
@@ -99,6 +101,16 @@ const Contact: React.FC = () => {
             {/* Contact Form */}
             <div className="animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8 delay-200">
               <form className="space-y-6" onSubmit={handleSubmit}>
+                <div>
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your Name"
+                    required
+                    className="w-full px-6 py-4 bg-black/30 border border-gray-500/30 rounded-lg focus:outline-none focus:border-blue-500/50 text-white placeholder-gray-400 transition-colors duration-300"
+                  />
+                </div>
                 <div>
                   <input
                     type="email"
