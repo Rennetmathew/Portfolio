@@ -2,39 +2,73 @@ import React from 'react';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white">
-      {/* Test Header */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-            Rennet Mathew
-          </h1>
-          <p className="text-2xl text-white/80 mb-8">
-            AI/ML Enthusiast | Python Developer
+    <div style={{ 
+      minHeight: '100vh', 
+      background: 'linear-gradient(135deg, #1f2937, #000000)',
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      fontFamily: 'system-ui, -apple-system, sans-serif'
+    }}>
+      <div style={{ textAlign: 'center', maxWidth: '600px', padding: '2rem' }}>
+        <h1 style={{ 
+          fontSize: '3rem', 
+          marginBottom: '1rem',
+          background: 'linear-gradient(45deg, #3b82f6, #8b5cf6)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+          backgroundClip: 'text'
+        }}>
+          Rennet Mathew
+        </h1>
+        <h2 style={{ 
+          fontSize: '1.5rem', 
+          marginBottom: '2rem',
+          color: '#94a3b8'
+        }}>
+          AI/ML Enthusiast | Python Developer
+        </h2>
+        <div style={{
+          background: 'rgba(255, 255, 255, 0.1)',
+          backdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+          borderRadius: '1rem',
+          padding: '2rem'
+        }}>
+          <h3 style={{ color: '#60a5fa', marginBottom: '1rem' }}>
+            🚀 Portfolio Loading Test
+          </h3>
+          <p style={{ marginBottom: '1.5rem', lineHeight: '1.6' }}>
+            This is a simplified test version. If you can see this message, 
+            the React app is working correctly on Vercel.
           </p>
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-8 max-w-2xl mx-auto">
-            <h2 className="text-3xl font-bold mb-4 text-blue-400">
-              Portfolio is Loading...
-            </h2>
-            <p className="text-lg text-white/70 mb-6">
-              This is a test version to debug the white screen issue. If you can see this message, React is working properly.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-blue-500/20 p-4 rounded-lg">
-                <h3 className="font-semibold text-blue-300">✅ React Loading</h3>
-                <p className="text-sm text-white/60">Components are rendering</p>
-              </div>
-              <div className="bg-green-500/20 p-4 rounded-lg">
-                <h3 className="font-semibold text-green-300">✅ Tailwind CSS</h3>
-                <p className="text-sm text-white/60">Styles are working</p>
-              </div>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '1rem',
+            marginBottom: '1.5rem'
+          }}>
+            <div style={{
+              background: 'rgba(59, 130, 246, 0.2)',
+              padding: '1rem',
+              borderRadius: '0.5rem'
+            }}>
+              <div style={{ fontWeight: 'bold', color: '#93c5fd' }}>✅ React Working</div>
+              <div style={{ fontSize: '0.875rem', color: '#cbd5e1' }}>Components rendering</div>
             </div>
-            <div className="mt-6">
-              <p className="text-sm text-white/50">
-                If this loads successfully, we'll restore the full portfolio components.
-              </p>
+            <div style={{
+              background: 'rgba(34, 197, 94, 0.2)',
+              padding: '1rem',
+              borderRadius: '0.5rem'
+            }}>
+              <div style={{ fontWeight: 'bold', color: '#86efac' }}>✅ Vercel Deploy</div>
+              <div style={{ fontSize: '0.875rem', color: '#cbd5e1' }}>Build successful</div>
             </div>
           </div>
+          <p style={{ fontSize: '0.875rem', color: '#64748b' }}>
+            Next: Restore full AI/ML portfolio components
+          </p>
         </div>
       </div>
     </div>
