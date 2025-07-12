@@ -8,41 +8,44 @@ const Skills: React.FC = () => {
     {
       title: 'Programming Languages',
       gradient: 'from-blue-500 to-cyan-500',
-      description: 'Core programming languages I specialize in',
+      description: 'Core programming languages for AI/ML and data science',
       skills: [
-        { name: 'Java', level: 90 },
-        { name: 'JavaScript', level: 85 },
-        { name: 'Python', level: 75 }
+        { name: 'Python', level: 90 },
+        { name: 'SQL', level: 85 }
       ]
     },
     {
-      title: 'Frontend Development',
+      title: 'ML Libraries & Frameworks',
       gradient: 'from-purple-500 to-pink-500',
-      description: 'Technologies I use to create responsive and interactive user interfaces',
+      description: 'Machine learning libraries and frameworks I use for building AI models',
       skills: [
-        { name: 'HTML', level: 90 },
-        { name: 'CSS', level: 85 },
-        { name: 'React.js', level: 85 }
+        { name: 'Scikit-learn', level: 80 },
+        { name: 'Pandas', level: 85 },
+        { name: 'NumPy', level: 85 },
+        { name: 'Matplotlib', level: 80 },
+        { name: 'Seaborn', level: 75 }
       ]
     },
     {
-      title: 'Backend Development',
+      title: 'AI/ML Tools & Platforms',
       gradient: 'from-green-500 to-teal-500',
-      description: 'Tools and technologies I use for server-side development',
+      description: 'Development tools and platforms I use for AI/ML projects',
       skills: [
-        { name: 'Node.js', level: 80 },
-        { name: 'Express.js', level: 75 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'REST APIs', level: 85 }
+        { name: 'Jupyter Notebook', level: 90 },
+        { name: 'Google Colab', level: 85 },
+        { name: 'Git', level: 90 }
       ]
     },
     {
-      title: 'Development Tools',
+      title: 'Machine Learning Concepts',
       gradient: 'from-orange-500 to-red-500',
-      description: 'Essential tools I use in my development workflow',
+      description: 'Core ML concepts and techniques I\'ve mastered',
       skills: [
-        { name: 'Git/GitHub', level: 90 },
-        { name: 'VS Code', level: 95 }
+        { name: 'Supervised Learning', level: 85 },
+        { name: 'Unsupervised Learning', level: 80 },
+        { name: 'Model Evaluation', level: 85 },
+        { name: 'EDA', level: 90 },
+        { name: 'Data Preprocessing', level: 88 }
       ]
     }
   ];
@@ -57,12 +60,12 @@ const Skills: React.FC = () => {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16 animate-on-scroll opacity-0 transition-all duration-1000 translate-y-8">
             <h2 className="text-5xl font-bold text-white mb-6 font-serif tracking-tight">
-              Technical Skills
+              AI/ML Skills
             </h2>
             <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-xl text-white/80 mb-12 font-serif max-w-2xl mx-auto">
-              A comprehensive overview of my technical expertise across different domains of software development,
-              with a focus on full-stack development using modern technologies and tools.
+              A comprehensive overview of my AI/ML expertise across different domains of machine learning,
+              data science, and artificial intelligence technologies.
             </p>
           </div>
 

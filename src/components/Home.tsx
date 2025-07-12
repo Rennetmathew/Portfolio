@@ -4,7 +4,7 @@ import { Code2, Brain, Rocket } from 'lucide-react';
 
 const Home: React.FC = () => {
   const [displayedRole, setDisplayedRole] = useState(0);
-  const roles = ['Full Stack Developer', 'AI Enthusiast'];
+  const roles = ['AI/ML Enthusiast', 'Python Developer', 'Data-Driven Problem Solver'];
 
   useScrollAnimation();
 
@@ -49,7 +49,7 @@ const Home: React.FC = () => {
           </h1>
 
           <p className="text-xl sm:text-2xl text-white/80 font-['Playfair_Display'] max-w-2xl mx-auto">
-            I build full-stack experiences and explore the future with AI.
+            Passionate about applying machine learning to real-world problems — currently upskilling through GUVI's AI/ML program.
           </p>
 
           <div className="h-10">
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
               href="#contact"
               className="inline-flex items-center px-6 py-3 border border-white/30 text-white rounded-full hover:border-white/60 transition hover:-translate-y-1"
             >
-              Let’s Connect
+              Let's Connect
             </a>
           </div>
         </div>
