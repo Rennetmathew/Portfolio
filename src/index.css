@@ -5,16 +5,30 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
-    @apply bg-black text-white;
+    @apply bg-black text-white transition-colors duration-300;
+    overflow-x: hidden;
+  }
+
+  /* Light mode styles */
+  body:not(.dark) {
+    @apply bg-gradient-to-br from-slate-50 to-blue-50 text-gray-900;
+  }
+
+  * {
+    scroll-behavior: smooth;
   }
 }
 
 @layer utilities {
   .animate-on-scroll {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
   
   .animate-on-scroll.show {
@@ -29,6 +43,154 @@
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   }
 
+  /* Modern scroll animations */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .stagger-child {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .stagger-child.stagger-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Pop-up animations for buttons and sections */
+  .pop-up {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .pop-up.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .pop-up-delay-1 {
+    transition-delay: 0.1s;
+  }
+
+  .pop-up-delay-2 {
+    transition-delay: 0.2s;
+  }
+
+  .pop-up-delay-3 {
+    transition-delay: 0.3s;
+  }
+
+  .pop-up-delay-4 {
+    transition-delay: 0.4s;
+  }
+
+  .fade-on-scroll {
+    transition: opacity 0.6s ease-out;
+  }
+
+  .parallax {
+    transform: translateZ(0);
+    will-change: transform;
+    transition: transform 0.1s ease-out;
+  }
+
+  /* Smooth scroll utilities */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Sticky sidebar utilities */
+  .sticky-sidebar {
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+  }
+
+  /* Enhanced scroll animations */
+  .fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .scale-in {
+    animation: scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  /* Floating animation for decorative elements */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay-1 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-float-delay-2 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  /* Gradient animation */
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+  }
+
+  /* Scroll progress indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #3B82F6, #8B5CF6, #EC4899);
+    transform-origin: left;
+    z-index: 9999;
+  }
+
+  /* Light mode scroll progress */
+  body:not(.dark) .scroll-progress {
+    background: linear-gradient(90deg, #1E40AF, #7C3AED, #DC2626);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle {
+    @apply relative inline-flex items-center justify-center w-12 h-12 rounded-full transition-all duration-300;
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white;
+    @apply hover:shadow-lg hover:shadow-blue-500/25 hover:scale-105;
+  }
+
+  body:not(.dark) .theme-toggle {
+    @apply bg-gradient-to-r from-indigo-600 to-purple-700;
+    @apply hover:shadow-indigo-500/25;
+  }
+
+  .theme-toggle svg {
+    @apply w-5 h-5 transition-all duration-300;
+  }
+
+  .theme-toggle:hover svg {
+    @apply rotate-12 scale-110;
+  }
+
   @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -37,5 +199,70 @@
   @keyframes blink-caret {
     from, to { border-color: transparent }
     50% { border-color: #60A5FA }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
